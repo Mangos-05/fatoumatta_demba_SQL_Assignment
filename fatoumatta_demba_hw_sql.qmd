@@ -206,6 +206,22 @@ Find the **top 10 routes** (`dest`) by:
 
 ordered by **number of flights**.
 
+```{}
+
+SELECT
+  origin,
+  dest,
+COUNT(*) AS number_of_flights
+FROM flights
+GROUP BY origin, dest
+ORDER BY number_of_flights DESC
+LIMIT 10;
+```
+
+![](images/part 2(d).png)
+
+This query identifies the 10 most frequently recorded flight routes. The `origin` column represents the airport where a flight begins, and the `dest` column represents the destination airport. The `COUNT(*)` function counts the number of flights for each combination of origin and destination. Using `GROUP BY origin, dest` ensures that flights are grouped by their complete routes, rather than by only their departure or destination airport. The `ORDER BY number_of_flights DESC`statement sorts routes from the most frequent to the least frequent, and `LIMIT 10` returns only the 10 busiest routes. 
+
 #### e.
 
 Export the result of part b query to a **CSV file** using the **Export Data** feature in DBeaver.
