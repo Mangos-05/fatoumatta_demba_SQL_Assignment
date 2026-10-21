@@ -224,19 +224,4 @@ This query identifies the 10 most frequently recorded flight routes. The `origi
 
 #### e.
 
-Export the result of part b query to a **CSV file** using the **Export Data** feature in DBeaver.
-
-Submit the exported CSV file along with your homework.
-
-- **Exporting Data to CSV in DBeaver**
-
-::: callout-note
-### Quick Steps
-
-1.  **Right-click** Table or Result Grid -\> **Export Data**.
-2.  Select **CSV** -\> Click **Next**.
-3.  Confirm **Settings** (Delimiters, Encoding) -\> Click **Next**.
-4.  Choose **Output Directory** -\> Click **Finish**.
-
-## 
-:::
+The result of the Part (b) query was exported to a CSV file named `carrier_flight_counts.csv` using DBeaver’s Export Data feature.
