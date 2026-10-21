@@ -147,13 +147,17 @@ dbDisconnect(conn, shutdown = TRUE)
 
 > Please go over the note **dbeaver_sql.html** to learn
 
-#### a.
+#### a. 
+
+```{}
+SELECT *
+FROM main.flights
+LIMIT 10;
+```
 
 List the first **10 rows** of the `flights` table.
 
-``` r
-dbGetQuery(conn, "YOUR SQL HERE")
-```
+![](images/part2(a).png)
 
 #### b.
 
