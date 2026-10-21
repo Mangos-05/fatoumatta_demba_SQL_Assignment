@@ -184,9 +184,17 @@ This query determines how many flights are associated with each carrier in the d
 
 Find the **average departure delayby month**
 
-- Your output should include:
-  - month
-  - average departure delay
+```{}
+SELECT month,
+AVG(dep_delay) AS average_departure_delay
+FROM main.flights
+GROUP BY month
+ORDER BY month;
+```
+
+![](images/part 2(c).png)
+
+This query calculates the average departure delay for flights in each month. The `month` column identifies the month in which the flight occurred, and `AVG(dep_delay)` calculates the average departure delay for the flights recorded in that month. The `GROUP BY month` statement separates the flights into monthly groups so that each month has its own average. The `ORDER BY month` statement displays the results in numerical month order, from January through December.
 
 #### d.
 
@@ -213,34 +221,6 @@ Submit the exported CSV file along with your homework.
 2.  Select **CSV** -\> Click **Next**.
 3.  Confirm **Settings** (Delimiters, Encoding) -\> Click **Next**.
 4.  Choose **Output Directory** -\> Click **Finish**.
+
+## 
 :::
-
-## Remember to Close the connection When You Are Done
-
-- **How to Disconnect and Reconnect a Database in DBeaver**
-
-1.  On the **top menu**, click **Database**.
-
-2.  From the drop-down menu, select **Disconnect**.
-
-3.  You should see a message on the **bottom right corner**:
-
-    ```         
-    Not connected to database
-    ```
-
-4.  To reconnect, go to **Database → Connect** and select your connection.
-
-> This is the easiest way to manage connections without closing DBeaver or losing work.
-
-## Submission
-
-- Save your Quarto file after completing each problem, render it, then stage and commit the changes.\
-
-- Include well-commented code and clear explanations.\
-
-- Make appropriate **commits**.\
-
-- Submit the rendered file to **Canvas** and push it to your **GitHub repository**.\
-
-**Good luck!**
