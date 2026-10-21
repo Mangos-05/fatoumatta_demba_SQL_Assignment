@@ -30,6 +30,7 @@ conn <- dbConnect(
 
 # Check which tables are available
 dbListTables(conn)
+
 ```
 
 ### Part I: Answer the following question by running SQL using **RStudio**.
@@ -159,15 +160,25 @@ List the first **10 rows** of the `flights` table.
 
 ![](images/part2(a).png)
 
+This query retrieves the first 10 rows from the `flights` table. The `SELECT *` command selects all available columns, and `FROM flights` specifies the table being queried. The `LIMIT 10` command restricts the results to 10 rows, allowing you to examine the structure and contents of the dataset without displaying every flight record.
+
 #### b.
 
 Count the Number of Flights for Each Carrier
 
 Find the **number of flights** for each carrier.
 
-- Your output should include:
-  - carrier
-  - number of flights Sort from the **largest to smallest**.
+```{}
+SELECT carrier,
+COUNT(*) AS number_of_flights
+FROM main.flights
+GROUP BY carrier
+ORDER BY number_of_flights DESC;
+```
+
+![](images/part 2(b).png)
+
+This query determines how many flights are associated with each carrier in the database. `COUNT(*)` counts the records for each airline, while `GROUP BY carrier` organizes the records according to their carrier codes. The `ORDER BY number_of_flights DESC` command sorts the output from the carrier with the most flights to the carrier with the fewest flights.
 
 #### c.
 
